@@ -1,0 +1,276 @@
+/* styles.css */
+
+/* --- RESET & VARIABLES --- */
+:root {
+  --color-bg-dark: #100e0d;
+  --color-bg-panel: rgba(22, 19, 17, 0.85);
+  --color-accent: #cfa86b; /* Premium Wood Gold */
+  --color-eco-green: #70a288; /* Eco-friendly Forest Sage */
+  --color-text-light: #f4f1ea;
+  --color-text-muted: rgba(244, 241, 234, 0.65);
+  --color-border: rgba(207, 168, 107, 0.18);
+  --font-sans: 'Outfit', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+  --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-light);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100vh;
+  /* Premium Dark Wood Texture Background */
+  background-image: linear-gradient(180deg, rgba(16, 14, 13, 0.93) 0%, rgba(10, 9, 8, 0.96) 100%), url('eco_wood_bg.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1.5rem;
+}
+
+/* --- PAGE WRAPPER & CARD --- */
+.page-wrapper {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  justify-content: center;
+}
+
+.coming-soon-card {
+  background: var(--color-bg-panel);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 4.5rem 3.5rem;
+  width: 100%;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(16px);
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* --- LOGO --- */
+.logo-container {
+  margin-bottom: 2.5rem;
+}
+
+.brand-logo {
+  max-height: 70px;
+  width: auto;
+  display: inline-block;
+}
+
+/* --- STATUS MESSAGE --- */
+.status-message {
+  margin-bottom: 2.5rem;
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.status-title {
+  font-family: var(--font-serif);
+  font-size: 3.25rem;
+  font-weight: 500;
+  color: var(--color-accent);
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+
+.status-subtitle {
+  font-size: 1.1rem;
+  line-height: 1.65;
+  color: var(--color-text-muted);
+  font-weight: 300;
+}
+
+/* --- DECORATIVE DIVIDER --- */
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.divider .line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(207, 168, 107, 0.3), transparent);
+  width: 120px;
+}
+
+.divider .leaf-icon {
+  color: var(--color-eco-green);
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
+/* --- CONTACT SECTION --- */
+.contact-section {
+  text-align: center;
+}
+
+.contact-title {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-eco-green);
+  margin-bottom: 2.25rem;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  text-align: left;
+}
+
+.branch-card {
+  background: rgba(18, 16, 14, 0.4);
+  border: 1px solid rgba(207, 168, 107, 0.1);
+  border-radius: 6px;
+  padding: 2rem 1.75rem;
+  transition: var(--transition-smooth);
+}
+
+.branch-card:hover {
+  border-color: var(--color-eco-green);
+  background: rgba(112, 162, 136, 0.03);
+  transform: translateY(-2px);
+}
+
+.branch-card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.branch-sub {
+  font-size: 0.7rem;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.branch-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.detail-item i {
+  color: var(--color-eco-green);
+  font-size: 0.95rem;
+  opacity: 0.9;
+  width: 16px;
+  text-align: center;
+}
+
+.detail-item a {
+  color: var(--color-text-light);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: var(--transition-smooth);
+}
+
+.detail-item a:hover {
+  color: var(--color-accent);
+}
+
+.detail-item p {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  line-height: 1.45;
+  font-weight: 300;
+}
+
+.detail-item.address {
+  align-items: flex-start;
+}
+
+.detail-item.address i {
+  margin-top: 3px;
+}
+
+/* --- FOOTER --- */
+.mini-footer {
+  margin-top: 4.5rem;
+  border-top: 1px solid rgba(207, 168, 107, 0.08);
+  padding-top: 2rem;
+}
+
+.mini-footer p {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.jv-tag {
+  font-size: 0.7rem;
+  color: var(--color-accent);
+  font-weight: 500;
+  opacity: 0.85;
+}
+
+/* --- ANIMATION --- */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- RESPONSIVE MEDIA QUERIES --- */
+@media (max-width: 960px) {
+  .coming-soon-card {
+    padding: 3.5rem 2.5rem;
+  }
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 700px) {
+  html {
+    font-size: 15px;
+  }
+  .coming-soon-card {
+    padding: 3rem 1.75rem;
+  }
+  .status-title {
+    font-size: 2.5rem;
+  }
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .branch-card {
+    padding: 1.5rem;
+  }
+}
